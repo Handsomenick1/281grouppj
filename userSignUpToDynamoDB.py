@@ -24,7 +24,6 @@ def user_signup_db(event, context):
         }
     }
 
-
 # Flow
 # An user is registered to Cognito
 # Cognito sends a response to the front-end
