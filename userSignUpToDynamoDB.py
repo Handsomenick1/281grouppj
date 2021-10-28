@@ -18,7 +18,7 @@ def user_signup_db(event, context):
     print(response)
     return {
         'statusCode': 200,
-        'body': json.dumps(response),
+        'body': "successfully saved the user to DynamoDB!",
         'headers': {
             "Access-Control-Allow-Origin": "*", "Content-type": "application/json"
         }
