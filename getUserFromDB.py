@@ -6,7 +6,7 @@ def get_user(event, context):
     client = boto3.client('dynamodb')
     try:
         response = client.get_item(
-            TableName = 'UserServiceDB',
+            TableName = 'itemize-userdb',
             Key={
                 "userId": {'S' : event['userId']}
             }
