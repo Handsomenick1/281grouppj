@@ -1,17 +1,21 @@
 import boto3
 import json
 
-def file_upload_db(event, context):
+def reciept_upload_db(event, context):
     client = boto3.client('dynamodb', region_name="us-west-2")
     response = client.put_item(
-        TableName = 'FileServiceDB',
+        TableName = 'itemize-receiptdb',
         Item={
+            'filePath':{'S': event['filePath']},
             'fileId':{'S': event['fileId']},
+            'userId':{'S': event['userId']},
             'merchant': {'S': event['merchant']},
             'description': {'S': event['description']},
             'date': {'S': event['date']},
-            'amount': {'S': event['amount']},
+            'taxamount': {'N': event['taxamount']},
+            'amount': {'N': event['amount']},
             'category': {'S': event['category']},
+            'url':{'S': event['url']}
         }
     )
     print(response)

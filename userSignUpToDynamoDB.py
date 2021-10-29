@@ -8,10 +8,10 @@ def user_signup_db(event, context):
         Item={
             'userId':{'S': event['userId']},
             'name': {'S': event['name']},
-            'agi': {'S': event['agi']},
-            'tax_filing_status': {'BOOL': event['tax_filing_status']},
-            'number_of_blind_filers': {'S': event['number_of_blind_filers']},
-            'number_of_filers_over_65': {'S': event['number_of_filers_over_65']},
+            'agi': {'N': event['agi']},
+            'tax_filing_status': {'S': event['tax_filing_status']},
+            'number_of_blind_filers': {'N': event['number_of_blind_filers']},
+            'number_of_filers_over_65': {'N': event['number_of_filers_over_65']},
             'properties': {'S': event['properties']}
         }
     )

@@ -6,9 +6,9 @@ def get_file(event, context):
     client = boto3.client('dynamodb')
     try:
         response = client.get_item(
-            TableName = 'FileServiceDB',
+            TableName = 'itemize-filedb',
             Key={
-                "fileId": {'S' : event['fileId']}
+                "filePath": {'S' : event['filePath']}
             }
         )
     except ClientError as e:
