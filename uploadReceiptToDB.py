@@ -2,7 +2,7 @@ import boto3
 import json
 
 def reciept_upload_db(event, context):
-    client = boto3.client('dynamodb', region_name="us-west-2")
+    client = boto3.client('dynamodb')
     response = client.put_item(
         TableName = 'itemize-receiptdb',
         Item={
@@ -21,7 +21,7 @@ def reciept_upload_db(event, context):
     print(response)
     return {
         'statusCode': 200,
-        'body': "successfully uploaded the file to DynamoDB!",
+        'body': "successfully uploaded the reciept to DynamoDB!",
         'headers': {
             "Access-Control-Allow-Origin": "*", "Content-type": "application/json"
         }

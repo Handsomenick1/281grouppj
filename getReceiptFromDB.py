@@ -6,7 +6,7 @@ def get_file(event, context):
     client = boto3.client('dynamodb')
     try:
         response = client.get_item(
-            TableName = 'itemize-filedb',
+            TableName = 'itemize-receiptdb',
             Key={
                 "filePath": {'S' : event['filePath']}
             }
