@@ -2,8 +2,9 @@ import boto3
 import json
 from botocore.exceptions import ClientError
 
+client = boto3.client('dynamodb')
+
 def get_user(event, context):
-    client = boto3.client('dynamodb')
     try:
         response = client.get_item(
             TableName = 'itemize-userdb',

@@ -1,8 +1,9 @@
 import boto3
 import json
 
-def user_signup_db(event, context):
-    client = boto3.client('dynamodb')
+client = boto3.client('dynamodb')
+
+def user_signup_db(event, context):    
     response = client.put_item(
         TableName = 'UserServiceDB',
         Item={

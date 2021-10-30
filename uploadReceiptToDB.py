@@ -1,8 +1,9 @@
 import boto3
 import json
 
+client = boto3.client('dynamodb')
+
 def reciept_upload_db(event, context):
-    client = boto3.client('dynamodb')
     response = client.put_item(
         TableName = 'itemize-receiptdb',
         Item={
@@ -29,5 +30,5 @@ def reciept_upload_db(event, context):
 
 # Flow
 # front-end sends a request to API GATEWAY
-# file_upload_db is invoked by API GATEWAY, save data to DynamoDB
-# file_upload_db sends a response back to the front-end
+# reciept_upload_db is invoked by API GATEWAY, save data to DynamoDB
+# reciept_upload_db sends a response back to the front-end
