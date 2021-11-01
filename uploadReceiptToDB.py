@@ -8,7 +8,6 @@ def reciept_upload_db(event, context):
         TableName = 'itemize-receiptdb',
         Item={
             'filePath':{'S': event['filePath']},
-            'fileId':{'S': event['fileId']},
             'userId':{'S': event['userId']},
             'merchant': {'S': event['merchant']},
             'description': {'S': event['description']},
@@ -16,7 +15,6 @@ def reciept_upload_db(event, context):
             'taxamount': {'N': event['taxamount']},
             'amount': {'N': event['amount']},
             'category': {'S': event['category']},
-            'url':{'S': event['url']}
         }
     )
     print(response)

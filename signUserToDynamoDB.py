@@ -10,9 +10,9 @@ def user_signup_db(event, context):
             'userId':{'S': event['userId']},
             'name': {'S': event['name']},
             'agi': {'N': event['agi']},
-            'tax_filing_status': {'S': event['tax_filing_status']},
-            'number_of_blind_filers': {'N': event['number_of_blind_filers']},
-            'number_of_filers_over_65': {'N': event['number_of_filers_over_65']},
+            'filing_status': {'S': event['filing_status']},
+            'filers_blind': {'N': event['filers_blind']},
+            'filers_sixtyfive': {'N': event['filers_sixtyfive']},
             'properties': {'S': event['properties']}
         }
     )
@@ -26,7 +26,7 @@ def user_signup_db(event, context):
     }
 
 # Flow
-# An user is registered to Cognito
+# After user is registered on Cognito
 # Cognito sends a response to the front-end
 # front-end sends a request to API GATEWAY
 # user_signup_db is invoked by API GATEWAY, save data to DynamoDB
