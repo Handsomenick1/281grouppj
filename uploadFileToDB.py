@@ -21,10 +21,7 @@ def file_upload_db(event, context):
 	print(response)
 	return {
         'statusCode': 200,
-        'body': "successfully uploaded the file to DynamoDB!",
-        'headers': {
-            "Access-Control-Allow-Origin": "*", "Content-type": "application/json"
-        }
+        'body': "successfully uploaded the file to DynamoDB!"
     }
 
 # Flow

@@ -24,11 +24,7 @@ def get_user(event, context):
     else:
         return {
             'statusCode': 200,
-            'body': json.dumps(response),
-            'headers': {
-                "Access-Control-Allow-Origin": "*", 
-                "Content-type": "application/json"
-            }
+            'body': json.dumps(response)
         }
 
 # front-end sends a request to API GATEWAY
