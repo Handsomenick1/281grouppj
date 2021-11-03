@@ -1,28 +1,33 @@
 import boto3
 import json
-
-client = boto3.client('dynamodb')
+import logging
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
 
 def user_signup_db(event, context):    
+    logger.debug('[EVENT] event: {}'.format(event))
+    logger.debug('[EVENT] body: {}'.format(event['body']))
+    body = event['body']
+    newUser = body['newUser']
+    logger.debug('[EVENT] body: {}'.format(str(body)))
+    client = boto3.client('dynamodb')
     response = client.put_item(
         TableName = 'UserServiceDB',
         Item={
-            'userId':{'S': event['userId']},
-            'name': {'S': event['name']},
-            'agi': {'N': event['agi']},
-            'filing_status': {'S': event['filing_status']},
-            'filers_blind': {'N': event['filers_blind']},
-            'filers_sixtyfive': {'N': event['filers_sixtyfive']},
-            'properties': {'S': event['properties']}
+            'userId':{'S': newUser['cognitoUserId']},
+            'first_name': {'S': newUser['first_name']},
+            'last_name': {'S': newUser['last_name']},
+            'agi': {'N': newUser['agi']},
+            'filing_status': {'S': newUser['filing_status']},
+            'filers_blind': {'N': newUser['filers_blind']},
+            'filers_sixtyfive': {'N': newUser['filers_sixtyfive']},
+            'properties': {'N': newUser['properties']}
         }
     )
     print(response)
     return {
         'statusCode': 200,
-        'body': "successfully saved the user to DynamoDB!",
-        'headers': {
-            "Access-Control-Allow-Origin": "*", "Content-type": "application/json"
-        }
+        'body': "successfully saved the user to DynamoDB!"
     }
 
 # Flow

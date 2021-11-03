@@ -1,29 +1,33 @@
 import boto3
 import json
+import logging
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
 
-client = boto3.client('dynamodb')
 
 def reciept_upload_db(event, context):
+    logger.debug('[EVENT] event: {}'.format(event))
+    logger.debug('[EVENT] body: {}'.format(event['body']))
+    body = event['body']
+    newReciept = body['newReceipt']
+    client = boto3.client('dynamodb')
     response = client.put_item(
         TableName = 'itemize-receiptdb',
         Item={
-            'filePath':{'S': event['filePath']},
-            'userId':{'S': event['userId']},
-            'merchant': {'S': event['merchant']},
-            'description': {'S': event['description']},
-            'date': {'S': event['date']},
-            'taxamount': {'N': event['taxamount']},
-            'amount': {'N': event['amount']},
-            'category': {'S': event['category']},
+            'filePath':{'S': newReciept['filePath']},
+            'userId':{'S': newReciept['userId']},
+            'merchant': {'S': newReciept['merchant']},
+            'description': {'S': newReciept['description']},
+            'date': {'S': newReciept['date']},
+            'taxamount': {'N': newReciept['taxamount']},
+            'amount': {'N': newReciept['amount']},
+            'category': {'S': newReciept['category']},
         }
     )
     print(response)
     return {
         'statusCode': 200,
-        'body': "successfully uploaded the reciept to DynamoDB!",
-        'headers': {
-            "Access-Control-Allow-Origin": "*", "Content-type": "application/json"
-        }
+        'body': "successfully uploaded the reciept to DynamoDB!"
     }
 
 # Flow
