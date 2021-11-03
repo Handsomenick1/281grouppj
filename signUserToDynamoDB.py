@@ -27,7 +27,13 @@ def user_signup_db(event, context):
     print(response)
     return {
         'statusCode': 200,
-        'body': "successfully saved the user to DynamoDB!"
+        'body': "successfully saved the user to DynamoDB!",
+        'headers': {
+            "Access-Control-Allow-Headers" : "Content-Type",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            'Access-Control-Allow-Credentials': True
+        }
     }
 
 # Flow
