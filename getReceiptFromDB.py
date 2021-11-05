@@ -9,7 +9,7 @@ def get_receipt(event, context):
         response = client.get_item(
             TableName = 'itemize-receiptdb',
             Key={
-                "filePath": {'S' : event['filePath']}
+                "filePath": {'S' : event['queryStringParameters']['filePath']}
             }
         )
     except ClientError as e:

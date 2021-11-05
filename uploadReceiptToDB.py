@@ -9,6 +9,9 @@ def reciept_upload_db(event, context):
     logger.debug('[EVENT] event: {}'.format(event))
     logger.debug('[EVENT] body: {}'.format(event['body']))
     body = event['body']
+    if type(body) == str:
+        body = json.loads(body)
+        
     newReciept = body['newReceipt']
     client = boto3.client('dynamodb')
     response = client.put_item(

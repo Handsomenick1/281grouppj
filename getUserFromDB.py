@@ -9,7 +9,7 @@ def get_user(event, context):
         response = client.get_item(
             TableName = 'itemize-userdb',
             Key={
-                "userId": {'S' : event['userId']}
+                "userId": {'S' : event['queryStringParameters']['userId']}
             }
         )
     except ClientError as e:

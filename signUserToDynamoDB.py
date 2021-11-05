@@ -8,6 +8,8 @@ def user_signup_db(event, context):
     logger.debug('[EVENT] event: {}'.format(event))
     logger.debug('[EVENT] body: {}'.format(event['body']))
     body = event['body']
+    if type(body) == str:
+        body = json.loads(body)
     newUser = body['newUser']
     logger.debug('[EVENT] body: {}'.format(str(body)))
     client = boto3.client('dynamodb')

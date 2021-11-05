@@ -9,7 +9,7 @@ def get_file(event, context):
         response = client.get_item(
             TableName = 'itemize-filedb',
             Key={
-                "filePath": {'S' : event['filePath']}
+                "filePath": {'S' : event['queryStringParameters']['filePath']}
             }
         )
     except ClientError as e:
