@@ -49,3 +49,7 @@ def delete_receipt(event, context):
                 'Access-Control-Allow-Credentials': True
             }
         }
+        
+# front-end sends a request to API GATEWAY
+# delete_receipt is invoked by API GATEWAY, delete data from DynamoDB
+# delete_receipt sends a response back to the front-end
