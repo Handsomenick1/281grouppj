@@ -4,15 +4,14 @@ import logging
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
-
-def reciept_upload_db(event, context):
+def receipt_upload(event, context):
     logger.debug('[EVENT] event: {}'.format(event))
     body = None
     try:
-        if ("body" not in event.keys()):
-            if "newReceipt" not in event.keys():
-                raise Exception("newReceipt not in event")
-            body = event
+        if "body" not in event.keys():
+            raise 
+        elif "newReceipt" not in event['body']:
+            return returnResponse(400, "newReceipt not in the request")
         else:
             body = event['body']
     except Exception as e:
@@ -24,19 +23,19 @@ def reciept_upload_db(event, context):
     if type(body) == str:
         body = json.loads(body)
         
-    newReciept = body['newReceipt']
+    newReceipt = body['newReceipt']
     dynamodb = boto3.resource('dynamodb')
     table = dynamodb.Table('itemize-receiptdb')
     response = table.put_item(
        Item={
-            'filePath': newReciept['filePath'],
-            'userId': newReciept['userId'],
-            'merchant': newReciept['merchant'],
-            'description': newReciept['description'],
-            'date': newReciept['date'],
-            'taxamount': newReciept['taxamount'],
-            'amount': newReciept['amount'],
-            'category': newReciept['category']
+            'filePath': newReceipt['filePath'],
+            'userId': newReceipt['userId'],
+            'merchant': newReceipt['merchant'],
+            'description': newReceipt['description'],
+            'date': newReceipt['date'],
+            'taxamount': newReceipt['taxamount'],
+            'amount': newReceipt['amount'],
+            'category': newReceipt['category']
             
         }
     )
