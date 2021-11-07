@@ -25,18 +25,19 @@ def reciept_upload_db(event, context):
         body = json.loads(body)
         
     newReciept = body['newReceipt']
-    client = boto3.client('dynamodb')
-    response = client.put_item(
-        TableName = 'itemize-receiptdb',
-        Item={
-            'filePath':{'S': newReciept['filePath']},
-            'userId':{'S': newReciept['userId']},
-            'merchant': {'S': newReciept['merchant']},
-            'description': {'S': newReciept['description']},
-            'date': {'S': newReciept['date']},
-            'taxamount': {'N': newReciept['taxamount']},
-            'amount': {'N': newReciept['amount']},
-            'category': {'S': newReciept['category']},
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('itemize-receiptdb')
+    response = table.put_item(
+       Item={
+            'filePath': newReciept['filePath'],
+            'userId': newReciept['userId'],
+            'merchant': newReciept['merchant'],
+            'description': newReciept['description'],
+            'date': newReciept['date'],
+            'taxamount': newReciept['taxamount'],
+            'amount': newReciept['amount'],
+            'category': newReciept['category']
+            
         }
     )
     print(response)

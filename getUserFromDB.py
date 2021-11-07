@@ -3,9 +3,11 @@ import json
 import decimal
 from botocore.exceptions import ClientError
 
-client = boto3.client('dynamodb')
-
 def get_user(event, context):
+    
+    client = boto3.client('dynamodb')
+    if 'userId' not in event['queryStringParameters']:
+        return returnResponse(404, "Bad request, please correct the Query Strings to userId")
     try:
         response = client.get_item(
             TableName = 'itemize-userdb',
@@ -13,26 +15,13 @@ def get_user(event, context):
                 "userId": {'S' : event['queryStringParameters']['userId']}
             }
         )
+        print(response)
     except ClientError as e:
-        return{
-            'statusCode': 400,
-            'body': json.dumps(e.response['Error']['Message']),
-            'headers': {
-                "Access-Control-Allow-Origin": "*", 
-                "Content-type": "application/json"
-            }
-        }
+        return returnResponse(400, json.dumps(e.response['Error']['Message']))
     else:
-        return {
-            'statusCode': 200,
-            'body': json.dumps(response['Item'], indent=4, cls=DecimalEncoder),
-            'headers': {
-                "Access-Control-Allow-Headers" : "Content-Type",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "*",
-                'Access-Control-Allow-Credentials': True
-            }
-    }
+        if 'Item' not in response:
+            return returnResponse(400, "user not exsit")
+        return returnResponse(200, json.dumps(response['Item'], indent=4, cls=DecimalEncoder))
     
 # Helper class to convert a DynamoDB item to JSON.
 class DecimalEncoder(json.JSONEncoder):
@@ -43,6 +32,18 @@ class DecimalEncoder(json.JSONEncoder):
             else:
                 return int(o)
         return super(DecimalEncoder, self).default(o)
+
+def returnResponse(statusCode, message):
+    return {
+        'statusCode': statusCode,
+        'body': message,
+        'headers': {
+            "Access-Control-Allow-Headers" : "Content-Type",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "*",
+            'Access-Control-Allow-Credentials': True
+        }
+    }
 
 # front-end sends a request to API GATEWAY
 # get_user is invoked by API GATEWAY, get data from DynamoDB

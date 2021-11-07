@@ -3,22 +3,16 @@ import json
 from botocore.exceptions import ClientError
 from boto3.dynamodb.conditions import Key, Attr
 
-def delete_all_receipts(event, context):
+def delete_all_receipt(event, context):
     # TODO implement
     dynamodb = boto3.resource('dynamodb')
+    if 'userId' not in event['queryStringParameters']:
+        return returnResponse(400, "Bad request, please correct the Query Strings to userId")
     userId = event['queryStringParameters']['userId']
     table = dynamodb.Table('itemize-receiptdb')
     if(userId == None or len(userId) == 0):
-        return {
-            'statusCode': 500,
-            'body': "Bad request",
-            'headers': {
-                "Access-Control-Allow-Headers" : "Content-Type",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "*",
-                'Access-Control-Allow-Credentials': True
-            }
-        }
+        return returnResponse(400, "invalid userId, try again")
+        
     response = table.scan(
         FilterExpression=Attr('userId').contains(userId)
     )
@@ -34,9 +28,12 @@ def delete_all_receipts(event, context):
             )
 
     print(response)
+    return returnResponse(200, "successfully deleted all reciepts in DynamoDB!")
+    
+def returnResponse(statusCode, message):
     return {
-        'statusCode': 200,
-        'body': "successfully deleted all reciepts in DynamoDB!",
+        'statusCode': statusCode,
+        'body': message,
         'headers': {
             "Access-Control-Allow-Headers" : "Content-Type",
             "Access-Control-Allow-Origin": "*",

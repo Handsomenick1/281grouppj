@@ -3,22 +3,20 @@ import json
 from boto3.dynamodb.conditions import Key, Attr
 import decimal
 
-def get_all_file(event, context):
+def get_all_receipt(event, context):
     dynamodb = boto3.resource('dynamodb')
     if 'userId' not in event['queryStringParameters']:
-        return returnResponse(404, "Bad request, please correct the Query Strings to userId")
-    
+        return returnResponse(502, "Bad request, please correct the Query Strings to userId")
+
     userId = event['queryStringParameters']['userId']
-    table = dynamodb.Table('itemize-filedb')
+    table = dynamodb.Table('itemize-receiptdb')
     response = table.scan(
         FilterExpression=Attr('userId').contains(userId)
     )
-    data = response['Items']
-    res = []
-    for item in data:
-        res.append('{' + item['url'] + '}')
+    print(response)
+    return returnResponse(200, json.dumps(response['Items'], indent=4, cls=DecimalEncoder))
     
-    return returnResponse(200, json.dumps(response, indent=4, cls=DecimalEncoder))
+    
 
 # Helper class to convert a DynamoDB item to JSON.
 class DecimalEncoder(json.JSONEncoder):
@@ -29,7 +27,6 @@ class DecimalEncoder(json.JSONEncoder):
             else:
                 return int(o)
         return super(DecimalEncoder, self).default(o)
-    
 def returnResponse(statusCode, message):
     return {
         'statusCode': statusCode,
@@ -41,7 +38,3 @@ def returnResponse(statusCode, message):
             'Access-Control-Allow-Credentials': True
         }
     }
-
-# front-end sends a request to API GATEWAY
-# get_all_file is invoked by API GATEWAY, get files from S3
-# get_all_file sends a response back to the front-end
