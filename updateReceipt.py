@@ -33,7 +33,7 @@ def update_receipt(event, context):
             'filePath': updateReceipt['filePath']
             
         },
-        UpdateExpression="set merchant=:me, #date=:da, taxamount=:ta, amount=:am, category=:ca",
+        UpdateExpression="set merchant=:me, #date=:da, taxamount=:ta, amount=:am, category=:ca, description=:de",
         ExpressionAttributeNames={
             "#date": "date",
             
@@ -41,9 +41,10 @@ def update_receipt(event, context):
         ExpressionAttributeValues={
             ":me": updateReceipt['merchant'],
             ":da": updateReceipt['date'],
-            ":ta": Decimal(updateReceipt['taxamount']),
-            ":am": Decimal(updateReceipt['amount']),
+            ":ta": Decimal(str(updateReceipt['taxamount'])),
+            ":am": Decimal(str(updateReceipt['amount'])),
             ":ca": updateReceipt['category'],
+            ":de": updateReceipt['description'],
             
         })
     return returnResponse(200, json.dumps(response, indent=4, cls=DecimalEncoder))
