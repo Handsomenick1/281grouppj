@@ -16,7 +16,7 @@
 - See where your itemize deductions stand 
 - How much your potential tax savings are 
 
-## Pre-requisites Set Up
+## Pre-requisites Set Up:
 - AWS S3, CloudFront, Lambda, DynamoDB, SNS, SES, CloudWatch, Route 53, Rekognition, Amplify, API Gateway, Lex.
 - ReactNative
 - React Redux
@@ -24,6 +24,15 @@
   - NodeJS version 16
   - Expo-cli 
 
+## Set up locally:
+- Here include quick steps on how to compile and run your project on local machine (whichever you used, Mac or Windows either one).
+  - Make sure you have Node v.16 running and expo-cli installed
+  - Git clone the frontend directory (https://github.com/bfkwong/itemize)
+  - Change to the cloned directory
+  - Open terminal and type in `yarn start`
+  - A browser window will show up 
+  - You can run it on website 
+  - If you have Android Studio and/or XCode Simulator, you can also run the native versions as well 
 
 ## Repository:
 - [Rekognition & Lex](https://github.com/pbustos97/CMPE-281-Project-2)
