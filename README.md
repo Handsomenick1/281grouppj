@@ -11,7 +11,7 @@
 ## ScreenShot:
 <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/AWSLex.png.png" alt="lex" style="width:230px;" style="text-align:center;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image1.png" alt="1" style="width:230px; text-align:center;"/> 
 
-<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image2.png" alt="2" style="width:230px;" style="text-align:center;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image3.png" alt="3" style="text-align:center;" style="width:230px;"/>
+<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image2.png" alt="2" style="width:230px;" style="text-align:center;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image3.png" alt="3" style="text-align:center; width:230px;"/>
 
 ## Feature list: 
 - Auto fill receipt from an image 
