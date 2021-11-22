@@ -19,7 +19,7 @@
 - See where your itemize deductions stand 
 - How much your potential tax savings are 
 ## Architecture
-<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/cmpe281project.drawio.png" alt="arch" style="width:350px;"/>
+<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/cmpe281project.drawio.png" alt="arch" style="width:500px;"/>
 ## Pre-requisites Set Up:
 - AWS S3, CloudFront, Lambda, DynamoDB, SNS, SES, CloudWatch, Route 53, Rekognition, Amplify, API Gateway, Lex.
 - ReactNative
