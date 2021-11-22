@@ -16,9 +16,17 @@
 - See where your itemize deductions stand 
 - How much your potential tax savings are 
 
+## Pre-requisites Set Up
+- AWS S3, CloudFront, Lambda, DynamoDB, SNS, SES, CloudWatch, Route 53, Rekognition, Amplify, API Gateway, Lex.
+- ReactNative
+- React Redux
+- List of required software to download locally 
+  - NodeJS version 16
+  - Expo-cli 
+
+
 ## Repository:
-Repositories:
-- [Rekognition + Lex](https://github.com/pbustos97/CMPE-281-Project-2)
+- [Rekognition & Lex](https://github.com/pbustos97/CMPE-281-Project-2)
 - [Backend](https://github.com/Handsomenick1/281grouppj)
 - [Frontend](https://github.com/bfkwong/itemize)
 
