@@ -9,7 +9,7 @@
 - Itemize is a **SaaS (high-availability, scalable)** product that will group and categorize receipts as well as group itemized deductions, and provide reports for current tax progress.
 
 ## ScreenShot:
-<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/AWSLex.png.png" alt="lex" style="width:240px;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image1.png" alt="1" style="width:240px;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image2.png" alt="2" style="width:240px;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image3.png" alt="3" style="width:240px;"/>
+<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/AWSLex.png.png" alt="lex" style="width:235px;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image1.png" alt="1" style="width:235px;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image2.png" alt="2" style="width:235px;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image3.png" alt="3" style="width:235px;"/>
 
 ## Feature list: 
 - Auto fill receipt from an image 
