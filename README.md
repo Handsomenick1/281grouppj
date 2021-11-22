@@ -4,6 +4,7 @@
 - Course: [CMPE-281](http://info.sjsu.edu/web-dbgen/catalog/courses/CMPE281.html)
 - Professor: [Sanjay Garje](https://www.linkedin.com/in/sanjaygarje/)
 - Student: [Fuyu Zhang](https://www.linkedin.com/in/nick-fuyuzhang/)
+- Group: **3 Musketeers**
 ## Project Introduction:
 - Itemize is a SaaS (high-availability, scalable) product that will group and categorize receipts as well as group itemized deductions, and provide reports for current tax progress.
 
