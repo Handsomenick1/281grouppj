@@ -17,8 +17,8 @@
 - How much your potential tax savings are 
 
 ## Repository:
-- Repositories:
-    -     [Rekognition + Lex](https://github.com/pbustos97/CMPE-281-Project-2)
-    -     [Backend](https://github.com/Handsomenick1/281grouppj)
-    -     [Frontend](https://github.com/bfkwong/itemize)
+Repositories:
+- [Rekognition + Lex](https://github.com/pbustos97/CMPE-281-Project-2)
+- [Backend](https://github.com/Handsomenick1/281grouppj)
+- [Frontend](https://github.com/bfkwong/itemize)
 
