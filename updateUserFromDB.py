@@ -40,12 +40,12 @@ def update_user(event, context):
         
         ExpressionAttributeValues={
             ":fi": updateUser['first_name'],
-            ":ag": Decimal(updateUser['agi']),
+            ":ag": Decimal(str(updateUser['agi'])),
             ":la": updateUser['last_name'],
             ":st": updateUser['filing_status'],
-            ":bi": Decimal(updateUser['filers_blind']),
-            ":si": Decimal(updateUser['filers_sixtyfive']),
-            ":pr": Decimal(updateUser['properties'])
+            ":bi": Decimal(str(updateUser['filers_blind'])),
+            ":si": Decimal(str(updateUser['filers_sixtyfive'])),
+            ":pr": Decimal(str(updateUser['properties']))
         })
     return returnResponse(200, json.dumps(response, indent=4, cls=DecimalEncoder))
     

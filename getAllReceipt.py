@@ -6,7 +6,7 @@ import decimal
 def get_all_receipt(event, context):
     dynamodb = boto3.resource('dynamodb')
     if 'userId' not in event['queryStringParameters']:
-        return returnResponse(502, "Bad request, please correct the Query Strings to userId")
+        return returnResponse(205, "Bad request, please correct the Query Strings to userId")
 
     userId = event['queryStringParameters']['userId']
     table = dynamodb.Table('itemize-receiptdb')
@@ -14,6 +14,8 @@ def get_all_receipt(event, context):
         FilterExpression=Attr('userId').contains(userId)
     )
     print(response)
+    if response['Items'] == None or len(response['Items']) == 0:
+        return returnResponse(204, "No receipt!")
     return returnResponse(200, json.dumps(response['Items'], indent=4, cls=DecimalEncoder))
     
     

@@ -20,7 +20,7 @@ def get_user(event, context):
         return returnResponse(400, json.dumps(e.response['Error']['Message']))
     else:
         if 'Item' not in response:
-            return returnResponse(400, "user not exsit")
+            return returnResponse(203, "user not exsit")
         return returnResponse(200, json.dumps(response['Item'], indent=4, cls=DecimalEncoder))
     
 # Helper class to convert a DynamoDB item to JSON.

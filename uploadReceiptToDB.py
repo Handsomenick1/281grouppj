@@ -1,6 +1,9 @@
 import boto3
 import json
 import logging
+import decimal
+from decimal import Decimal
+
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
@@ -33,8 +36,8 @@ def receipt_upload(event, context):
             'merchant': newReceipt['merchant'],
             'description': newReceipt['description'],
             'date': newReceipt['date'],
-            'taxamount': newReceipt['taxamount'],
-            'amount': newReceipt['amount'],
+            'taxamount': Decimal(str(newReceipt['taxamount'])),
+            'amount': Decimal(str(newReceipt['amount'])),
             'category': newReceipt['category']
             
         }
