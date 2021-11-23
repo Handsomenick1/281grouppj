@@ -11,7 +11,7 @@
 - Itemize is a **SaaS (high-availability, scalable)** product that will group and categorize receipts as well as group itemized deductions, and provide reports for current tax progress.
 
 ## ScreenShot:
-<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/AWSLex.png.png" alt="lex" style="text-align:center; width:230px;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image1.png" alt="1" style="text-align:center; width:230px;"/> 
+<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/Screen%20Shot%202021-11-22%20at%204.22.13%20PM.png" alt="1" style="text-align:center; width:230px;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image1.png" alt="1" style="text-align:center; width:230px;"/> 
 
 <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image2.png" alt="2" style="text-align:center; width:230px;"/> <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/image3.png" alt="3" style="text-align:center; width:230px;"/>
 
