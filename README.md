@@ -23,10 +23,12 @@
 <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/Screen%20Shot%202021-11-23%20at%2011.08.44.png" alt="3" style="text-align:center; width:1000px;"/> 
 
 ## Feature list: 
-- Auto fill receipt from an image 
-- Enter a receipt 
-- See where your itemize deductions stand 
-- How much your potential tax savings are
+- User Service:
+  - signup, get, update
+- File Service:
+  - upload, get, getall, delete
+- Receipt Service:
+  - upload, get, getall, update, delete, deleteall 
  
 ## Architecture
 <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/cmpe281project.drawio.png" alt="arch" style="width:650px;"/>
