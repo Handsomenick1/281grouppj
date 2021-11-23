@@ -16,7 +16,7 @@
 <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/Screen%20Shot%202021-11-23%20at%2011.06.38.png" alt="2" style="text-align:center; width:1000px;"/> 
 
 - Successed
-<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/Screen%20Shot%202021-11-23%20at%2011.06.52.png" alt="3" style="text-align:center; width:1000px;"/> 
+<img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/Screen%20Shot%202021-11-23%20at%2011.08.44.png" alt="3" style="text-align:center; width:1000px;"/> 
 
 ## Feature list: 
 - Auto fill receipt from an image 
