@@ -28,22 +28,18 @@
 <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/cmpe281project.drawio.png" alt="arch" style="width:650px;"/>
 
 ## Pre-requisites Set Up:
-- AWS S3, CloudFront, Lambda, DynamoDB, SNS, SES, CloudWatch, Route 53, Rekognition, Amplify, API Gateway, Lex.
-- ReactNative
-- React Redux
-- List of required software to download locally 
-  - NodeJS version 16
-  - Expo-cli 
+- AWS S3, CloudFront, Lambda, DynamoDB, API Gateway.
 
 ## Set up locally:
-- Here include quick steps on how to compile and run your project on local machine (whichever you used, Mac or Windows either one).
-  - Make sure you have Node v.16 running and expo-cli installed
-  - Git clone the frontend directory (https://github.com/bfkwong/itemize)
-  - Change to the cloned directory
-  - Open terminal and type in `yarn start`
-  - A browser window will show up 
-  - You can run it on website 
-  - If you have Android Studio and/or XCode Simulator, you can also run the native versions as well 
+- Download related library
+ - [boto3](https://www.linkedin.com/pulse/install-python-aws-sdk-boto3-mac-rany-elhousieny-phd%E1%B4%AC%E1%B4%AE%E1%B4%B0/)
+- run `git clone git@github.com:Handsomenick1/281grouppj.git` to download files
+- go to your Lambda and create functions following the files
+- test them on Lambda based on documents below:
+ - [Reciept API](https://docs.google.com/document/d/1IoJumF7RcuCMLGsXvg1rAxpNwx2pB1eDClIwsImgIn8/edit?usp=sharing)
+ - [File API](https://docs.google.com/document/d/1a_ARMF7awQmDEbrisUtk7oTXrhmoIvs7TR6NWhrh614/edit#heading=h.759pwl7gx55k)
+ - [User API](https://docs.google.com/document/d/1mFw37FflMAH4pQo6egnk_jDiAx9npc11bZhW1aBl_3A/edit#heading=h.vnx1s6kennwd)
+- connect functions with API Gateway
 
 ## Repository:
 - [Rekognition & Lex](https://github.com/pbustos97/CMPE-281-Project-2)
