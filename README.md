@@ -9,6 +9,10 @@
 
 ## Project Introduction:
 - Itemize is a **SaaS (high-availability, scalable)** product that will group and categorize receipts as well as group itemized deductions, and provide reports for current tax progress.
+- This repository is only for User, File and Receipt Service.
+  - [UserServiceDocument](https://docs.google.com/document/d/1mFw37FflMAH4pQo6egnk_jDiAx9npc11bZhW1aBl_3A/edit#heading=h.vnx1s6kennwd)
+  - [FileServiceDocument](https://docs.google.com/document/d/1a_ARMF7awQmDEbrisUtk7oTXrhmoIvs7TR6NWhrh614/edit#heading=h.759pwl7gx55k)
+  - [ReceiptServiceDocument](https://docs.google.com/document/d/1IoJumF7RcuCMLGsXvg1rAxpNwx2pB1eDClIwsImgIn8/edit#heading=h.sbbjz5c86byh)
 
 ## ScreenShot:
 - Invalid input & No Data
