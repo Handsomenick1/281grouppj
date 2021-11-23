@@ -34,7 +34,7 @@
 <img src="https://github.com/Handsomenick1/281grouppj/blob/main/pic/cmpe281project.drawio.png" alt="arch" style="width:650px;"/>
 
 ## Pre-requisites Set Up:
-**It is serverless, no required software**
+- Required software: Browser(e.g Chrome, Firfox, etc)
 - AWS S3, CloudFront, Lambda, DynamoDB, API Gateway.
 
 ## Set up locally:
