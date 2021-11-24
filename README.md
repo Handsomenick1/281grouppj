@@ -47,7 +47,11 @@
   - [File API](https://docs.google.com/document/d/1a_ARMF7awQmDEbrisUtk7oTXrhmoIvs7TR6NWhrh614/edit#heading=h.759pwl7gx55k)
   - [User API](https://docs.google.com/document/d/1mFw37FflMAH4pQo6egnk_jDiAx9npc11bZhW1aBl_3A/edit#heading=h.vnx1s6kennwd)
 - Each testing result will be stored in CloudWatch.
-- Connect functions with API Gateway
+- Create APIs for each of the back-end services on API gateway to connect with the front-end.
+- Connect each API as a trigger with corresponding Lambda function. 
+- Configure Authorization with Cognito User Pool, and enable Lambda Proxy integration for each method.
+- Test them on API gateway, and deploy each API.
+
 
 ## Repository:
 - [Rekognition & Lex](https://github.com/pbustos97/CMPE-281-Project-2)
